@@ -1,0 +1,33 @@
+<h1> Our Recipes </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Cook Time</th>
+      <th>Instructions</th>
+      <th>Picture</th>
+      <th>Ingredients</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.title %></td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.cook_time %></td>
+        <td><%= recipe.instructions %></td>
+        <td><%= recipe.picture %></td>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.created_at %></td>
+        <td><%= recipe.updated_at %></td>
+        <td><%= link_to 'Show', recipe %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

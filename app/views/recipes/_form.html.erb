@@ -1,0 +1,40 @@
+
+<%= form_for(@recipe) do |f| %>
+<fieldset>
+  <section>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </section>
+  <section> <%= f.label :description %>
+    <%= f.text_field :description %>
+  </section>
+  <section> 
+    <%= f.label :cook_time %>
+    <%= f.text_field :cook_time %>
+  </section>
+  <section>
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions %>
+  </section>
+  <section> 
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
+  </section>
+  <section>
+    <%= f.label :ingredients %>
+    <%= f.text_field :ingredients %>
+  </section>
+<section> 
+    <%= f.label :created_at %>
+    <%= f.text_field :created_at %>
+  </section>
+  <section>
+    <%= f.label :updated_at %>
+    <%= f.text_field :updated_at %>
+  </section>
+
+  <section>
+  <%= f.submit("Save") %>
+  </section>
+</fieldset>
+<% end %>
