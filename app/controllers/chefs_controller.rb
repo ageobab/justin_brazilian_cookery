@@ -26,9 +26,26 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    flash[:notice] = "Your recipe was murked."
+    redirect_to recipes_path
+  end
+
   def edit
     @chef = Chef.find(params[:id])
   end
+ 
+  def destroy
+    @chef = Chef.find(params[:id])
+    @chef.destroy
+    respond_to do |format|
+      format.html { redirect_to chefs_url }
+      format.json { head :no_content }
+  end
+end
+
 
 
   def update

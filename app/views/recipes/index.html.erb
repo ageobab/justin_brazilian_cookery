@@ -27,6 +27,7 @@
         <td><%= recipe.updated_at %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+        <td><%= link_to("Delete", recipe_path(recipe.id), method: :delete, confirm: "Are you sure titty boy?") %></td>
       </tr>
     <% end %>
   </tbody>
