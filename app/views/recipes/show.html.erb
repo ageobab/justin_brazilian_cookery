@@ -4,4 +4,6 @@
 <h3> Description: <%= @recipe.description %></h3> 
 <div> Instructions: <%= @recipe.instructions %></div>
 <br>
+<div> Chef: <%= @recipe.chef.name %></div>
+
 <div><%= image_tag(@recipe.picture, style: "width: 150px") %></div>

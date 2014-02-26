@@ -9,12 +9,13 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.new
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      flash[:success] = "New recipe has arrived.  Let's Cook Bro!"
+      flash[:notice] = "New recipe has arrived.  Let's Cook Bro!"
       redirect_to recipe_path(@recipe.id)
     else
       flash[:error] = "There was an error saving your form."
@@ -46,7 +47,7 @@ class RecipesController < ApplicationController
 private 
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :cook_time, :instructions, :picture, :ingredients, :created_at, :updated_at)
+    params.require(:recipe).permit(:title, :description, :cook_time, :instructions, :picture, :ingredients, :created_at, :updated_at, :chef_id)
   end
 
 end
