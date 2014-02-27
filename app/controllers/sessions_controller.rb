@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email])
     if @user.try(:authenticate, params[:password])
-      session[:current_user = @user]
+      session[:current_user]= @user
       redirect_to root_path, :notice => "You made it. You're logged in."
     else
       flash[:error] = "You done messed up."
