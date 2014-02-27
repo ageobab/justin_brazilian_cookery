@@ -6,4 +6,6 @@ JustinBrazilianCookery::Application.routes.draw do
 
  root "static_pages#home"
  get "/about" => "static_pages#about"
+
+ delete "/logout" => "sessions#logout"
 end

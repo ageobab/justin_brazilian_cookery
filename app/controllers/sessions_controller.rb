@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:current_user = @user]
       redirect_to root_path, :notice => "You made it. You're logged in."
     else
-      flash[:error] = "You done meessed up."
+      flash[:error] = "You done messed up."
       render :new
     end
 
