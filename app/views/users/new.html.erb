@@ -1,0 +1,33 @@
+<h1> New Brother on Board </h1>
+
+<%= form_for(@user) do |f| %>
+
+  <fieldset>
+
+    <section>
+      <%= f.label :name %>
+      <%= f.text_field(:name) %>
+    </section>
+
+    <section>
+      <%= f.label :email %>
+      <%= f.email_field(:email) %>
+    </section>
+
+    <section>
+      <%= f.label :password %>
+      <%= f.password_field(:password) %>
+    </section>
+
+    <section>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field(:password_confirmation) %>
+    </section>
+
+    <section>
+      <%= f.submit("Sign the hell up") %>
+    </section>
+
+  </fieldset>
+
+  <% end %>
